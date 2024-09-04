@@ -1,6 +1,5 @@
 package guru.springframework.msscbrewery.web.controller;
 
-//import java.net.http.HttpHeaders;
 import java.util.UUID;
 
 import org.springframework.http.HttpHeaders;
@@ -10,14 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import guru.springframework.msscbrewery.services.BeerService;
 import guru.springframework.msscbrewery.web.model.BeerDto;
-
-
-
 
 /**
  * Created by jt on 2019-04-20.
@@ -39,7 +36,7 @@ public class BeerController {
     }
 
     @PostMapping // create a new beer
-    public ResponseEntity<BeerDto> handlePost(BeerDto beerDto) {
+    public ResponseEntity<BeerDto> handlePost(@RequestBody BeerDto beerDto) {
 
         BeerDto savedDto = beerService.saveNewBeer(beerDto);
 
@@ -50,7 +47,7 @@ public class BeerController {
     }
 
     @PutMapping({ "/{beerId}" })
-    public ResponseEntity<BeerDto> handleUpdate(@PathVariable("beerId") UUID beerId, BeerDto beerDto){
+    public ResponseEntity<BeerDto> handleUpdate(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto){
         
         beerService.updateBeer(beerId, beerDto);
 
