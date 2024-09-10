@@ -1,0 +1,28 @@
+|===
+|Path|Type|Description
+
+|`+id+`
+|`+String+`
+|Id of Beer
+
+|`+beerName+`
+|`+String+`
+|Beer Name
+
+|`+beerStyle+`
+|`+String+`
+|Beer Style
+
+|`+upc+`
+|`+Number+`
+|UPC of Beer
+
+|`+createdDate+`
+|`+Null+`
+|Date Created
+
+|`+lastUpdatedDate+`
+|`+Null+`
+|Date Updated
+
+|===
